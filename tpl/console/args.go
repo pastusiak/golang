@@ -4,6 +4,19 @@ import (
 	"os"
 )
 
+func ManualMode() (isManualMode bool, manualMode string) {
+	for _, item := range os.Args {
+		switch item {
+		case "--mode-console":
+			return true, "console"
+		case "--mode-desktop":
+			return true, "desktop"
+		}
+	}
+
+	return false, ""
+}
+
 func WithArgs() (isArgs bool, option []string, quit bool) {
 	isArgs = false
 	quit = false
