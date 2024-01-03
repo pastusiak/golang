@@ -9,7 +9,7 @@ type App struct{}
 
 func NewApp(loadEnv bool) *App {
 	if loadEnv {
-		godotenv.Loa
+		godotenv.Load()
 	}
 
 	return &App{}
